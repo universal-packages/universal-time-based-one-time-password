@@ -65,7 +65,7 @@ Verify uses the same options as generate and additionally:
 - **`offsetSteps`** `number` `default: 1`
   Number of steps around the given time should be tested for the verification.
 
-### Base32
+## Base32
 
 Some verificators require you to pass the secret in base32 format (for some reason), you can use packages like [Base32 Encode](https://www.npmjs.com/package/base32-encode), for example for the google authenticator you can do:
 
@@ -85,7 +85,7 @@ This library is developed in TypeScript and shipped fully typed.
 
 ## Contributing
 
-The development of this library in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving this library.
+The development of this library happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving this library.
 
 - [Code of Conduct](./CODE_OF_CONDUCT.md)
 - [Contributing Guide](./CONTRIBUTING.md)
