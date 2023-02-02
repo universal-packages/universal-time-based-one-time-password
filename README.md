@@ -12,21 +12,12 @@ implementation from [RFC6238](https://www.rfc-editor.org/rfc/rfc6238)
 npm install @universal-packages/time-based-one-time-password
 ```
 
-## generate()
+## Global methods
+#### generate(secret: string, [options])
 
 Generates the current otp password for the current time.
 
-```js
-import { generate } from '@universal-packages/time-based-one-time-password'
-
-const password = generate('secret', options?)
-
-console.log(password)
-
-// > 123654
-```
-
-### Options
+#### Options
 
 - **`algorithm`** `'sha1' | 'sha256' | 'sha512'` `default: sha1`
   Algorithm to use when generating the hmac hash.
@@ -37,7 +28,7 @@ console.log(password)
 - **`timeStep`** `number` `default: 30`
   The time window in seconds in which the password should be valid (the same).
 
-## verify()
+#### **`verify(subject: string, secret: string, [options])`**
 
 Verify if the given password is valid for the time window, in will verify the specified steps around the specified time window, basically:
 
@@ -48,17 +39,7 @@ Verify if the given password is valid for the time window, in will verify the sp
 
 It will verify the current time window (or time given) and the surroundings by the given `offsetSteps` in the example above the offset is one. Make sure to verify password using the same options used for generating them.
 
-```js
-import { verify } from '@universal-packages/time-based-one-time-password'
-
-const isValid = verify('456789', 'secret', options?)
-
-console.log(isValid)
-
-// > true
-```
-
-### Options
+#### Options
 
 Verify uses the same options as generate and additionally:
 
