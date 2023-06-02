@@ -1,4 +1,5 @@
 import crypto from 'crypto'
+
 import { GenerateOptions } from './types'
 
 /**
