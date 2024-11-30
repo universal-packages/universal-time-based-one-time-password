@@ -24,7 +24,7 @@ export function generate(secret: string, options?: GenerateOptions): string {
   let steps = T.toString(16)
   while (steps.length < 16) steps = '0' + steps
 
-  const hmac = crypto.createHmac(finalOptions.algorithm, Buffer.from(hexSecret, 'hex'))
+  const hmac = crypto.createHmac(finalOptions.algorithm, new Uint8Array(Buffer.from(hexSecret, 'hex')))
   hmac.update(steps, 'hex')
   const hash = hmac.digest('hex')
 
